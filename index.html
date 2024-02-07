@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount calculator</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Калькулятор знижки</h1>
+    <form class="calculator-form" autocomplete="off">
+      <legend class="group-title">Сумма заказів попереднього місяця, грн</legend>
+      <input class="input-fields" type="number" name="sumorders" placeholder="Введіть сумму" autofocus />
+
+      <legend class="group-title">Сумма поточного заказу, грн</legend>
+      <input class="input-fields" type="number" name="currentorder" placeholder="Введіть сумму" autofocus />
+
+      <fieldset class="form-group">
+        <legend class="group-title">Умови оплати:</legend>
+        <div class="form-field">
+          <input type="radio" name="payment" value="передоплата" />
+          <label>Передоплата</label>
+        </div>
+        <div class="form-field">
+          <input type="radio" name="payment" value="відтермінування" />
+          <label> Відтермінування </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <legend class="group-title">Доставка:</legend>
+        <div class="form-field">
+          <input type="radio" name="delivery" value="доставка" />
+          <label> Доставка </label>
+        </div>
+        <div class="form-field">
+          <input type="radio" name="delivery" value="самовивіз" />
+          <label> Самовивіз </label>
+        </div>
+      </fieldset>
+
+      <legend class="group-title">Відтермінування платежу, днів</legend>
+      <input class="input-fields" type="number" name="quantity" placeholder="Введіть кількість днів" />
+      <button type="submit">Розрахувати</button>
+    </form>
+    <h2>Підсумкова знижка: <span class="discount-value"></span>%</h2>
+    <button type="button" data-destroy>Очистити</button>
+    <script src="/index.js" type="module"></script>
+  </body>
+</html>
