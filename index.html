@@ -28,6 +28,9 @@
         </div>
       </fieldset>
 
+      <legend class="group-title">Відтермінування платежу, днів</legend>
+      <input class="input-fields" type="number" name="quantity" placeholder="Введіть кількість днів" />
+
       <fieldset class="form-group">
         <legend class="group-title">Доставка:</legend>
         <div class="form-field">
@@ -40,12 +43,10 @@
         </div>
       </fieldset>
 
-      <legend class="group-title">Відтермінування платежу, днів</legend>
-      <input class="input-fields" type="number" name="quantity" placeholder="Введіть кількість днів" />
       <button type="submit">Розрахувати</button>
+      <h2>Підсумкова знижка: <span class="discount-value"></span>%</h2>
+      <button type="button" data-destroy>Очистити</button>
     </form>
-    <h2>Підсумкова знижка: <span class="discount-value"></span>%</h2>
-    <button type="button" data-destroy>Очистити</button>
     <script src="./index.js" type="module"></script>
   </body>
 </html>

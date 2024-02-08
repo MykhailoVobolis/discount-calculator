@@ -27,6 +27,11 @@ function recordLocalStorage(event) {
   discount.payment = calculateForm.elements.payment.value;
   discount.delivery = calculateForm.elements.delivery.value;
   discount.quantity = calculateForm.elements.quantity.value;
+
+  // Автоматичне встановлення нуль днів відтермінування при попередній оплаті
+  if (clientPayment.value === "передоплата") {
+    calculateForm.elements.quantity.value = 0;
+  }
   localStorage.setItem(localStorageKey, JSON.stringify(discount));
 }
 
@@ -60,7 +65,8 @@ function onClick(event) {
   // Знижка за передоплату
   if (clientPayment.value === "передоплата") {
     discountSize += 1;
-    calculateForm.elements.quantity.value = "0";
+    // calculateForm.elements.quantity.value = "0";
+    // quantityDays.value = 0;
   }
 
   // Знижка за самовивоз товару зі складу
@@ -80,7 +86,6 @@ function onClick(event) {
   }
 
   title.innerHTML = `${discountSize}`;
-  console.log(discountSize);
 }
 
 // Очищення форми, localStorage та результату
