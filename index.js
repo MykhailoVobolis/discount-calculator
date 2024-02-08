@@ -60,6 +60,7 @@ function onClick(event) {
   // Знижка за передоплату
   if (clientPayment.value === "передоплата") {
     discountSize += 1;
+    calculateForm.elements.quantity.value = "0";
   }
 
   // Знижка за самовивоз товару зі складу
